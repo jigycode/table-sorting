@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { Formik } from "formik";
-import toast, { Toaster } from "react-hot-toast";
 
 export default function TodoApp() {
   const [tasks, setTasks] = useState([]);
