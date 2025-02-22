@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -7,6 +8,13 @@ export default function TodoApp() {
   const [task, setTask] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(null);
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("notes"));
+    if (savedNotes) {
+      setTasks(savedNotes);
+    }
+  }, []);
 
   const addTask = () => {
     if (task.trim() !== "") {
@@ -26,6 +34,7 @@ export default function TodoApp() {
     } else {
       toast.error("Task cannot be empty!"); // ❌ Error Toast
     }
+    localStorage.setItem("notes", JSON.stringify(tasks));
   };
 
   const editTask = (index) => {
