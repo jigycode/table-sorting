@@ -18,7 +18,7 @@ const EligibilityCheck = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen max-w-max bg-gray-100">
+    <div className="flex flex-col items-center justify-center m bg-gray-100">
       <div className="bg-white p-6 rounded-2xl shadow-lg w-80 text-center">
         <h1 className="text-xl font-bold mb-4">Eligibility Checker</h1>
         <input
