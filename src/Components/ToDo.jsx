@@ -93,7 +93,7 @@ const ToDo = () => {
 
       {/* Display Notes in Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {notes.map((note, noteIndex) => (
+        {notes?.map((note, noteIndex) => (
           <div
             key={noteIndex}
             className={`${note.color} p-4 rounded-lg shadow-md`}
@@ -122,7 +122,7 @@ const ToDo = () => {
 
             {/* Task List */}
             <ul>
-              {note.tasks.map((task, taskIndex) => (
+              {note?.tasks?.map((task, taskIndex) => (
                 <li
                   key={taskIndex}
                   className={`flex justify-between items-center p-2 mb-1 rounded-md ${
